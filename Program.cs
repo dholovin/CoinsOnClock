@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ClockCoins
+namespace CoinsOnClock
 {
     class Program
     {
@@ -92,8 +92,8 @@ namespace ClockCoins
         }
 
         static int GetRemainingCoinWeightsSum() {
-            return 64 // coinWeights.Aggregate((result, coinWeight) => result + coinWeight) * 4
-            - choices.Sum();
+            // return coinWeights.Aggregate((result, coinWeight) => result + coinWeight) * 4 - choices.Sum();
+            return 64 - choices.Sum();
         }
 
         static int getNextPosition(int currentPosition, int coinWeight)
