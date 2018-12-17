@@ -7,13 +7,13 @@ namespace CoinsOnClock
     class Program
     {
         static int[] coinWeights = new int[] { 1, 5, 10 };
-        static int maxSlotsCount = 12;
         static Dictionary<int, int> coinsOnClock = new Dictionary<int, int>();
         static int iteration = 1;
         static void Main(string[] args)
         {
             Console.WriteLine("Analysis is started...");
-            PutCoinsOnClock(1);
+            PutCoinsOnClock(5);
+            Console.WriteLine("Analysis is complete...");
         }
 
         static void LogState()
@@ -27,12 +27,11 @@ namespace CoinsOnClock
 
         static void PutCoinsOnClock(int currentPosition, int startCoinWeightIndex = 0)
         {
-            // while (iteration != 474)
-            while (coinsOnClock.Count() < maxSlotsCount)
+            while (coinsOnClock.Count() < 12)
             {
                 iteration += 1;
 
-                if (currentPosition == maxSlotsCount)
+                if (currentPosition == 12)
                 {
                   coinsOnClock.Add(currentPosition, GetSumOfRemainingCoinWeights());  
                   break;
@@ -97,9 +96,9 @@ namespace CoinsOnClock
 
         static int getNextPosition(int currentPosition, int coinWeight)
         {
-            var newSlotPosition = (currentPosition + coinWeight) % maxSlotsCount;
+            var newSlotPosition = (currentPosition + coinWeight) % 12;
             if (newSlotPosition == 0)
-                newSlotPosition = maxSlotsCount;
+                newSlotPosition = 12;
 
             return newSlotPosition;
         }
