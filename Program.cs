@@ -12,7 +12,7 @@ namespace CoinsOnClock
         static void Main(string[] args)
         {
             Console.WriteLine("Analysis is started...");
-            PutCoinsOnClock(5);
+            PutCoinsOnClock(1);
             Console.WriteLine("Analysis is complete...");
         }
 
