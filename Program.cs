@@ -6,6 +6,7 @@ namespace CoinsOnClock
 {
     class Program
     {
+        // Test Commit
         static int[] coinWeights = new int[] { 1, 5, 10 };
         static Dictionary<int, int> coinsOnClock = new Dictionary<int, int>();
         static int iteration = 1; // for logging purposes only
